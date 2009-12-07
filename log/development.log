@@ -452,3 +452,421 @@ ActionController::RoutingError (No route matches "/javascripts/application.js" w
   
 
 Rendering rescues/layout (not_found)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:55:58) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 31ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:55:59) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:56:00) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 13:56:14) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45357-1i3es3b-0>}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Redirected to http://localhost:3000/
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/assesments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:56:14) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "assesments" [0m
+  [4;35;1mAssesment Load (0.5ms)[0m   [0mSELECT * FROM "assesments" LIMIT 1[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 13:58:19) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45391-170trjj-0>}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "assesments" ("created_at", "updated_at", "user_id", "delete_at", "shape_content_type", "shape_file_size", "shape_file_name", "shape_updated_at", "state") VALUES('2009-12-07 13:58:40.645112', '2009-12-07 13:58:40.645112', NULL, NULL, E'application/zip', 97999, E'wdpa_2_export.zip', '2009-12-07 13:58:33.756240', NULL) RETURNING "id"[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/simon/Documents/01.Code/01.Now/git/proteus_tool/public
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "assesments" [0m
+Redirected to http://localhost:3000/
+Completed in 45237ms (DB: 2) | 302 Found [http://localhost/assesments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:59:04) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 76ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 13:59:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/application.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 13:59:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/layout.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:09:27) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 35ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:09:37) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-w4tfdn-0>}}
+
+ActiveRecord::UnknownAttributeError (unknown attribute: shape):
+  app/controllers/assesments_controller.rb:9:in `new'
+  app/controllers/assesments_controller.rb:9:in `create'
+
+Rendered rescues/_trace (41.9ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:12:02) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:12:03) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:12:55) [POST]
+  Parameters: {"commit"=>"Save changes", "shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-mjvfl3-0>, "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE="}
+Redirected to http://localhost:3000/
+Completed in 823610ms (DB: 0) | 302 Found [http://localhost/assesments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:26:39) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:26:52) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:27:03) [POST]
+  Parameters: {"commit"=>"Save changes", "shape"=>{"classfile_input"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-1gvbjiv-0>}, "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE="}
+
+NoMethodError (undefined method `original_filename' for #<HashWithIndifferentAccess:0x1035baa78>):
+  app/controllers/assesments_controller.rb:8:in `create'
+
+Rendered rescues/_trace (37.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:27:23) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:27:37) [POST]
+  Parameters: {"commit"=>"Save changes", "shape"=>{"classfile_input"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-1511opv-0>}, "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE="}
+
+NoMethodError (undefined method `original_filename' for #<HashWithIndifferentAccess:0x103832170>):
+  app/controllers/assesments_controller.rb:9:in `create'
+
+Rendered rescues/_trace (37.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:28:27) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:28:28) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:28:33) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-nhgfus-0>}}
+
+NoMethodError (undefined method `original_filename' for nil:NilClass):
+  app/controllers/assesments_controller.rb:9:in `create'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:29:19) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:29:21) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:29:35) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-b95w6g-0>}}
+
+NoMethodError (undefined method `ends_with' for "README.rdoc":String):
+  app/controllers/assesments_controller.rb:11:in `create'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:30:28) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:30:57) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45526-h4ceji-0>}}
+Redirected to http://localhost:3000/
+
+Errno::ENOENT (No such file or directory - /Users/simon/Documents/01.Code/01.Now/git/proteus_tool/system/assesment_shapes/c135cfd40bca8ac530d741c7a6ad458697acd281):
+  app/controllers/assesments_controller.rb:24:in `initialize'
+  app/controllers/assesments_controller.rb:24:in `open'
+  app/controllers/assesments_controller.rb:24:in `create'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:34:10) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 35ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:34:11) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:34:16) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45787-1sk57kb-0>}}
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/assesments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:34:16) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:34:31) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45787-6dsxzg-0>}}
+
+NoMethodError (undefined method `save?' for #<Assesment:0x10372cfa0>):
+  app/controllers/assesments_controller.rb:28:in `create'
+
+Rendered rescues/_trace (39.6ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:34:52) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 71ms (View: 63, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:35:06) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45787-1j98l1o-0>}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "assesments" ("created_at", "updated_at", "user_id", "delete_at", "shape_content_type", "shape_file_size", "shape_file_name", "shape_updated_at", "state") VALUES('2009-12-07 14:35:06.583315', '2009-12-07 14:35:06.583315', NULL, NULL, NULL, NULL, E'wdpa_2_export.zip', NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/assesments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:35:06) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:39:48) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45787-a1l69x-0>}}
+
+NoMethodError (undefined method `save?' for #<Assesment:0x103661af8>):
+  app/controllers/assesments_controller.rb:28:in `create'
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:39:55) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:40:09) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45787-q9catd-0>}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "assesments" ("created_at", "updated_at", "user_id", "delete_at", "shape_content_type", "shape_file_size", "shape_file_name", "shape_updated_at", "state") VALUES('2009-12-07 14:40:09.229999', '2009-12-07 14:40:09.229999', NULL, NULL, NULL, NULL, E'519b278ae44f24bf42db0527f121ca032d853b63.zip', NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/assesments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:40:09) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 14:42:23) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45787-1bnai3p-0>}}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "assesments" ("created_at", "updated_at", "user_id", "delete_at", "shape_content_type", "shape_file_size", "shape_file_name", "shape_updated_at", "state") VALUES('2009-12-07 14:42:23.909241', '2009-12-07 14:42:23.909241', NULL, NULL, NULL, NULL, E'42cb76b21e8ed1d7852741afdb6bd5ab64608b42.zip', NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/assesments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 14:42:23) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
