@@ -1,0 +1,2 @@
+class ProximityAnalysis < Analysis
+end
