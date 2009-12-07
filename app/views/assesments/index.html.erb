@@ -1,0 +1,7 @@
+
+
+<h1>Assesment Uploader</h1>
+<% form_for @assesment, :html => {:multipart => true} do |f| %>  
+	<%= f.file_field :shape, :class => 'file_input' %>
+	<%= f.submit %>
+<% end %>
