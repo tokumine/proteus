@@ -186,3 +186,269 @@ DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in
 DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
   [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:16:43) [GET]
+
+ActionView::MissingTemplate (Missing layout layouts/client.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:17:01) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 75ms (View: 74, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:17:22) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:20:22) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 23ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:38:23) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  paperclip (2.3.1.1) [v] lib/paperclip.rb:306:in `validates_attachment_content_type'
+  app/models/assesment.rb:7
+  app/controllers/assesments_controller.rb:4:in `index'
+
+Rendered rescues/_trace (104.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE schema_migrations ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20091207104742)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE users ("id" serial primary key, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091207104742')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateAssesments (20091207104748)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCREATE TABLE assesments ("id" serial primary key, "user_id" integer, "shape_file_name" character varying(255), "shape_content_type" character varying(255), "shape_file_size" character varying(255), "shape_updated_at" character varying(255), "state" character varying(255), "delete_at" timestamp, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091207104748')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateTenements (20091207120310)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE tenements ("id" serial primary key, "assesment_id" integer, "attribute_data" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (15.3ms)[0m   [0mSELECT AddGeometryColumn('tenements','the_geom',4326,'MULTIPOLYGON',2)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091207120310')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Migrating to CreateAnalyses (20091207122307)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCREATE TABLE analyses ("id" serial primary key, "type" character varying(255), "name" character varying(255), "value" float, "attribute_data" character varying(255), "tenement_id" integer, "pa_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSELECT AddGeometryColumn('analyses','the_geom',4326,'MULTIPOLYGON',2)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091207122307')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:39:08) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  paperclip (2.3.1.1) [v] lib/paperclip.rb:306:in `validates_attachment_content_type'
+  app/models/assesment.rb:7
+  app/controllers/assesments_controller.rb:4:in `index'
+
+Rendered rescues/_trace (104.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:39:39) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  paperclip (2.3.1.1) [v] lib/paperclip.rb:306:in `validates_attachment_content_type'
+  app/models/assesment.rb:7
+  app/controllers/assesments_controller.rb:4:in `index'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:39:42) [GET]
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/assesment.rb:7:in `validates_attachment_content_type'
+  app/models/assesment.rb:7
+  app/controllers/assesments_controller.rb:4:in `index'
+
+Rendered rescues/_trace (110.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:41:13) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 34ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 13:41:40) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45055-1h0d339-0>}}
+
+ActionView::MissingTemplate (Missing template assesments/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "assesments" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:42:58) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 13:43:09) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45055-fuw704-0>}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+Redirected to http://localhost:3000/
+Completed in 54596ms (DB: 1) | 302 Found [http://localhost/assesments]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:44:04) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 13:44:18) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45055-3yq1ot-0>}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "assesments" ("created_at", "updated_at", "user_id", "delete_at", "shape_content_type", "shape_file_size", "shape_file_name", "shape_updated_at", "state") VALUES('2009-12-07 13:44:29.056554', '2009-12-07 13:44:29.056554', NULL, NULL, E'application/zip', 97999, E'wdpa_2_export.zip', '2009-12-07 13:44:25.476394', NULL) RETURNING "id"[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/simon/Documents/01.Code/01.Now/git/proteus_tool/public/
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 100361ms (DB: 2) | 302 Found [http://localhost/assesments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:45:58) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 13:45:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/layout.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 13:45:58) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/application.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#create (for 127.0.0.1 at 2009-12-07 13:46:40) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"2oBSGawTlr2NO6JZvw90G0nDxrR9lLmFa8Etv5m4GJE=", "assesment"=>{"shape"=>#<File:/var/folders/7B/7Bm0JOJbFU47n6N9f5H3y++++TI/-Tmp-/RackMultipart20091207-45055-1vh5197-0>}}
+Redirected to http://localhost:3000/
+Completed in 3211ms (DB: 0) | 302 Found [http://localhost/assesments]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing AssesmentsController#index (for 127.0.0.1 at 2009-12-07 13:46:44) [GET]
+Rendering template within layouts/client
+Rendering assesments/index
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 13:46:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/layout.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-07 13:46:44) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/application.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
