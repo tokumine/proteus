@@ -50,4 +50,5 @@ production:
   database: proteus_tool_production
   pool: 5
   username: postgres
-  password:
+  password: postgres
+  template: template_postgis

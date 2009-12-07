@@ -15,14 +15,14 @@ class AssesmentsController < ApplicationController
     end
         
     #GENERATE INDIVIDUAL FILENAME
-    file_name = "#{Digest::SHA1.hexdigest("#{Time.now.usec}#{name}")}.zip"
-    directory = "#{RAILS_ROOT}/data/assesment_shapes"
+    file_path = "#{Digest::SHA1.hexdigest("#{Time.now.usec}#{name}")}.zip"
+    directory = "#{RAILS_ROOT}/data/assesment_shapes/#{file_path}"
         
     #BUILD DIRECTORY IF NOT THERE
     FileUtils.mkdir_p directory
     
     # create the file path
-    path = File.join(directory, file_name)
+    # path = File.join(directory, file_name)
         
     # write the file
     File.open(path, "wb") { |f| f.write(params[:assesment][:shape].read) }
