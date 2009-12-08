@@ -94,5 +94,5 @@
 <% end -%>
 
 <% content_for :map do %>
-	<%= swf_tag "map", :flashvars => {:URL => request.url} %>
+	<%= swf_tag "map", :flashvars => {:URL => request.url}, :height => 400 %>
 <% end -%>
