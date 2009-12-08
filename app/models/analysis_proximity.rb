@@ -9,8 +9,7 @@ class AnalysisProximity < Analysis
     results.each do |r|
       analysis << self.create(:tenement_id => tenement_id, :pa_id => r.result_id, :name => "proxmity", :value => r.distance)
     end
-    analysis
-    
+    analysis   
   end
   
 end

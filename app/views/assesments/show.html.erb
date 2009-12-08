@@ -48,7 +48,10 @@
 				</th>
 				<th>
 					Designation
-				</th>			
+				</th>	
+				<th>
+					Distance
+				</th>		
 			</thead>
 		<tbody>
 		<% if t.nearby_pas.empty? %>
@@ -64,6 +67,9 @@
 					</td>
 					<td>
 						<%= p.desig_loc%>
+					</td>
+					<td>
+						<%= number_with_precision p.analyses.find_by_tenement_id(t.id).try(:value),:precision => 4 %>
 					</td>
 				</tr>		
 				<% end -%>

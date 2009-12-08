@@ -68,8 +68,7 @@ class AssesmentsController < ApplicationController
     #CONDUCT DISTANCE QUERY AND SAVE IN JOIN TABLE
     @assesment.tenements.each do |t|
       AnalysisOverlap.analyse t.id, t.the_geom.as_wkt
-      #AnalysisDistance.analyse t.id, t.the_geom.as_wkt
-      #AnalysisProximity.analyse t.id, t.the_geom.as_wkt
+      AnalysisProximity.analyse t.id, t.the_geom.as_wkt
     end
 
     
