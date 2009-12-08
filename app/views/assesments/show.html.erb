@@ -69,7 +69,7 @@
 						<%= p.desig_loc%>
 					</td>
 					<td>
-						<%= number_with_precision p.analyses.find_by_tenement_id(t.id).try(:value),:precision => 4 %>
+						<%= number_with_precision p.analyses.find_by_tenement_id(t.id, :conditions => "analyses.type = 'AnalysisProximity'").try(:value) * 100,:precision => 2 %> km
 					</td>
 				</tr>		
 				<% end -%>

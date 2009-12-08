@@ -59,12 +59,16 @@
 	<% form_for @assesment, :html => {:multipart => true} do |f| %>  
 		<div style="background:#D1DFF9;padding:1em;margin-bottom:1em;">
 		<%= f.file_field :shape, :class => 'file_input' %>
+		
 		</div>
 		<div style="float:right;">
 		<%= f.submit "Upload" %>
 		</div>
 	
 		<div style="clear:both;"></div>
+		<h6 class="quiet" style="margin-top:0em;">File Format</h6>
+		<p class="quiet">Please upload all tenements as zipped shapefiles in the <b>WGS84 projection (SRID 4326)</b>. If you would like to name your tenements for analysis, please include a field called <b>"name"</b> in your shape attributes.</p>	  	
+
 	
 		<h6 class="quiet" style="margin-top:0em;">Privacy note</h6>
 		<p class="quiet">Please note that all data uploaded to the Tenement Analysis tool is <b>deleted nightly</b>. You can also delete your assessment manually at any time.</p>	  	
