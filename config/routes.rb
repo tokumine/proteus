@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => :assesments, :action => :index
-  map.resource :assesments
+  map.resources :assesments
 
   # The priority is based upon order of creation: first created -> highest priority.
 

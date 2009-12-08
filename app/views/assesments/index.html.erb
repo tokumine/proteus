@@ -1,6 +1,10 @@
+<h2>Assesments</h2>
+<% @assesments.each do |a| %>
+	<div><%= link_to a.file_name, a %> - <%= a.created_at.to_s(:long)%></div>
+<% end -%>
 
 
-<h1>Assesment Uploader</h1>
+<h3>Assesment Uploader</h3>
 <% form_for @assesment, :html => {:multipart => true} do |f| %>  
 	<%= f.file_field :shape, :class => 'file_input' %>
 	<%= f.submit %>

@@ -21,3 +21,4 @@ lib/WDPApol2009.shp
 lib/WDPApol2009.shp.xml
 data/*
 data/assesment_shapes/*
+tmp/shape_uploads/*
