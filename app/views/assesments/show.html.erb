@@ -23,7 +23,7 @@
 				<% t.overlapping_pas.each do |p| %>
 				<tr>
 					<td>
-						<%= p.name_eng %>
+						<%= p.name_eng == 'English name not known' ? p.name_loc : p.name_eng  %>
 					</td> 
 					<td>
 						<%= p.iucncat %>
@@ -60,7 +60,7 @@
 				<% t.nearby_pas.each do |p| %>
 				<tr>
 					<td>
-						<%= p.name_eng %>
+						 <%= p.name_eng == 'English name not known' ? p.name_loc : p.name_eng  %>					
 					</td> 
 					<td>
 						<%= p.iucncat %>
