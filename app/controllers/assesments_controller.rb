@@ -10,6 +10,7 @@ class AssesmentsController < ApplicationController
     @assesment = Assesment.new
   end
   
+  
   def create
     file_name = params[:assesment][:shape].original_filename
     
@@ -81,6 +82,20 @@ class AssesmentsController < ApplicationController
     
   def show
     @a = Assesment.find(params[:id])  
+  end
+  
+  
+  def json
+    @a = Assesment.find(params[:id])
+    return_array = []
+    @a.tenements.each do |t|
+      json_hash = {}
+      json_hash[:id] = t.id
+      json_hash[:geom] = JSON.parse t.as_geojson(6,1)
+      return_array << json_hash
+    end
+      
+    render :json => return_array.to_json        
   end
   
   def destroy

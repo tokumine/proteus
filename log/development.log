@@ -27,3 +27,9 @@ DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in
   [4;36;1mAssesment Load (1.0ms)[0m   [0;1mSELECT * FROM "assesments" LIMIT 1[0m
   [4;35;1mTenement Load (1.0ms)[0m   [0mSELECT * FROM "tenements" WHERE ("tenements".assesment_id = 1) LIMIT 1[0m
   [4;36;1mPa Load (4.6ms)[0m   [0;1mSELECT "pas".* FROM "pas" INNER JOIN "analyses" ON "pas".gid = "analyses".pa_id WHERE (("analyses".tenement_id = 1) AND ((analyses.type = 'AnalysisOverlap'))) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+DEPRECATION WARNING: require "activerecord" is deprecated and will be removed in Rails 3. Use require "active_record" instead.. (called from /Users/simon/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/activerecord.rb:2)
