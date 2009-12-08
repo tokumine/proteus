@@ -19,7 +19,12 @@
 	<div class="inner_container">
 		<%= yield :map%>
 		<div class="content_container">
-			<%= yield %>			
+			<div class="span-16" style="margin-top:1.5em;">
+				<%= yield :left%>
+			</div>	
+			<div class="span-6 last box upload">			
+				<%= yield :right%>			
+			</div>	
 		</div>
 		<div style="clear:both">&nbsp;</div>
 	</div>

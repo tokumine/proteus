@@ -1,16 +1,53 @@
-<h1>Assesment for <%= @a.file_name%></h1>
-<ul>
-<% @a.tenements.each_with_index do |t,i| %>
-	<li>Tenement <%= i%> overlaps with <%= t.pas.count(:conditions => "analyses.type = 'AnalysisOverlap'") %> PAs
-		<ul>
-		<% t.pas(:conditions => "analyses.type = 'AnalysisOverlap'").each do |p|  %>
-				<li><%= p.name_eng%></li>
-		<% end -%>
-		</ul>
+<% content_for :left do %>
+	<h2>Assessment for <%= @a.file_name%></h2>
+
+	<% @a.tenements.each_with_index do |t,i| %>
+	<h3 style="margin:0;">Tenement <%= i%></h3>
+	<h5 class="quiet" style="margin:0.2em;">Overlaps</h5>
+	<table class="zebra">
+		<thead>
+			<th>
+				PA name
+			</th>
+			<th>
+				IUCN 
+			</th>
+			<th>
+				Designation
+			</th>			
+		</thead>
+	<tbody>
+	<% if t.overlapping_pas.empty? %>
+			<tr><td style="height:100px;color:#444;" colspan="4"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> There was no overlap for this tenement</b></span></center></div></td><tr>
+	<% else %>		
+			<% t.overlapping_pas.each do |p| %>
+			<tr>
+				<td>
+					<%= p.name_eng %>
+				</td> 
+				<td>
+					<%= p.iucncat %>
+				</td>
+				<td>
+					<%= p.desig_loc%>
+				</td>
+			</tr>		
+			<% end -%>
+	<% end -%>
+		</tbody>	
+	</table>
+	<% end -%>	
+<% end -%>			
+
+
+<% content_for :right do %>
+	<h3 style="margin-bottom:0.5em;">Options</h3>
+	<ul id="menu">
+		<li><%= link_to "#{image_tag 'icons/page_excel.png'} Download results (CSV)", root_url, :class => "button" %></li>
+		<li><%= link_to "#{image_tag 'icons/delete.png'} Delete assessment", assesment_path(@a), :method => :delete, :confirm => "are you sure you want to delete this assessment?", :class => "button negative" %>		
+	</ul>
+	
+	<div class="clear" style="border-bottom:1px solid #fff;"></div>
+	<div style="margin:1em 0;"><%= link_to "back to home", root_url, :class => "quiet small" %></div>
+	
 <% end -%>
-</ul>	
-
-<div><%= link_to "Upload another", root_url %></div>
-
-
-
