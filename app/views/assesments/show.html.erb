@@ -94,6 +94,5 @@
 <% end -%>
 
 <% content_for :map do %>
-	<%= swf_tag "map" %>
-	
+	<%= swf_tag "map", :flashvars => {:URL => request.url} %>
 <% end -%>
