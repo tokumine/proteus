@@ -65,3 +65,28 @@ body{padding-top:1em; background: #ccc url("/images/background.png") top left re
 	margin-bottom:0.5em;
 	padding:0;
 }
+
+.upload{
+	padding-bottom:0.5em;
+	border-top:1px solid #BBD1F9;
+	-moz-border-radius-bottomright: 10px; 
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomleft: 10px; 
+	-webkit-border-bottom-left-radius: 10px;
+
+}
+
+a{font-weight:bold;text-decoration:none;}
+a:hover{text-decoration:underline;}
+/*table*/
+table {margin-bottom:1.4em;width:100%;}
+thead th {font-weight:bold;color:#eee;background:#666;border-bottom:1px solid #ccc;}
+thead th, tbody td {padding:4px 10px 4px 5px;border-bottom:1px solid #eee;}
+tr.even td {background:#E5ECF9;}
+tfoot {font-style:italic;}
+tbody {font-size:0.9em;}
+
+#flash{
+	float:right;
+	width:150px;
+}

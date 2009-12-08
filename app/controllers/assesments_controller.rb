@@ -82,4 +82,12 @@ class AssesmentsController < ApplicationController
   def show
     @a = Assesment.find(params[:id])  
   end
+  
+  def destroy
+    a = Assesment.find(params[:id])  
+    if a.destroy
+      flash[:notice] = "analysis deleted"
+    end
+    redirect_to root_url
+  end
 end

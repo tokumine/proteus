@@ -1,12 +1,53 @@
-<div class="span-16">
-<h2>Your Completed Assesments</h2>
-<% @assesments.each do |a| %>
-	<div><%= link_to a.file_name, a %> - <%= pluralize a.tenements.count, "tenement"%>, <%= a.created_at.to_s(:long)%></div>
+<div class="span-16" style="margin-top:1.5em;">
+<h2>Your Tenement Assessments</h2>
+
+<table class="zebra">
+	<thead>
+		<th>
+			File name
+		</th>
+		<th>
+			Tenements
+		</th>
+		<th>
+			Overlapping PA's
+		</th>
+		<th>
+			Actions
+		</th>
+	</thead>
+<tbody>
+<% if @assesments.empty? %>
+		<tr><td style="height:100px;color:#444;" colspan="4"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> Upload an ESRI shapefile to start</b></span> <%= image_tag "icons/arrow_right.png" %></center></div></td><tr>
+<% else %>
+		
+			<% @assesments.each do |a| %>
+			<tr>
+				<td><%= link_to a.file_name, a %><br>
+					<span class="small quiet"><%= a.created_at.to_s(:short) %></span>
+				</td> 
+				<td>
+					<%= pluralize a.tenements.count, "tenement"%>
+				</td>
+				<td>
+					<%= pluralize a.tenements.inject(0){|sum,t|t.pas.count}, "pa"%>
+				</td>
+				<td>
+					<%= link_to image_tag('icons/zoom.png', :alt => "view", :title => "view this assessment"), assesment_path(a) %>
+					<%= link_to image_tag('icons/delete.png', :alt => "delete", :title => "delete this assessment"), assesment_path(a), :method => :delete, :confirm => "are you sure you want to delete this assesment?" %>
+					
+				</td>	
+			<% end -%>
+			</tr>		
 <% end -%>
+		</tbody>	
+		</table>	
+			
+
 </div>
 
-<div class="span-6 last box" style="padding-bottom:0.5em;">
-<h3 style="margin-bottom:0.5em;">Upload New Assessment</h3>
+<div class="span-6 last box upload">
+<h3 style="margin-bottom:0.5em;margin-top:0.25em;">Upload New Assessment</h3>
 <% form_for @assesment, :html => {:multipart => true} do |f| %>  
 	<div style="background:#D1DFF9;padding:1em;margin-bottom:1em;">
 	<%= f.file_field :shape, :class => 'file_input' %>
