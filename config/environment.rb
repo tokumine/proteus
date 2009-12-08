@@ -22,7 +22,8 @@ Rails::Initializer.run do |config|
    config.gem "uuid"
    config.gem 'state_machine'
    config.gem "paperclip"
-   config.gem "GeoRuby", :lib => "geo_ruby"
+   config.gem "nofxx-georuby", :lib => "geo_ruby"
+   config.gem "dbf"
    config.gem "postgis_adapter"
    config.gem 'will_paginate', :version => '2.3.11'
    config.gem "rubyzip", :lib=>"zip/zip"
