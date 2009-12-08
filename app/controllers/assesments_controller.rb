@@ -80,7 +80,31 @@ class AssesmentsController < ApplicationController
     
     
   def show
-    @a = Assesment.find(params[:id])  
+    @a = Assesment.find(params[:id])
+    respond_to do |wants|
+      wants.html
+      wants.csv do
+        csv_string = FasterCSV.generate do |csv|
+          # header row
+          csv << ["tenement_id", "wdpa_site_code", "pa_name", "iucn_cat", "designation", "analysis type", "distance"]
+
+          # data rows
+          @a.tenements.each do |t|
+            t.overlapping_pas.each do |pa|
+              csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"overlap",-1]
+            end
+            t.nearby_pas.each do |pa|
+              csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"nearby",pa.analyses.find_by_tenement_id(t.id).try(:value)]
+            end
+          end
+        end
+
+        # send it to the browsah
+        send_data csv_string,
+                 :type => 'text/csv; charset=iso-8859-1; header=present',
+                 :disposition => "attachment; filename=tenement_analysis.csv"
+      end
+    end
   end
   
   
