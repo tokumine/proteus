@@ -1,0 +1,16 @@
+<h2>Assesment for <%= @a.file_name%></h2>
+<ul>
+<% @a.tenements.each_with_index do |t,i| %>
+	<li>Tenement <%= i%> overlaps with <%= t.pas.count(:conditions => "analyses.type = 'AnalysisOverlap'") %> PAs
+		<ul>
+		<% t.pas(:conditions => "analyses.type = 'AnalysisOverlap'").each do |p|  %>
+				<li><%= p.name_eng%></li>
+		<% end -%>
+		</ul>
+<% end -%>
+</ul>	
+
+<div><%= link_to "Upload another", root_url %></div>
+
+
+

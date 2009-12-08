@@ -61,16 +61,16 @@ class AssesmentsController < ApplicationController
     
     #WE WOULD NORMALLY ADD TO USER HERE, BUT TEMP IS ADD TO SESSION
     
-    
     #cleanup files
     FileUtils.rm_rf directory
     
-    #CONDUCT DISTANCE QUERY AND SAVE
-    #Tenement.
-    
-    
-    
-    
+    #CONDUCT DISTANCE QUERY AND SAVE IN JOIN TABLE
+    @assesment.tenements.each do |t|
+      AnalysisOverlap.analyse t.id, t.the_geom.as_wkt
+      #AnalysisDistance.analyse t.id, t.the_geom.as_wkt
+      #AnalysisProximity.analyse t.id, t.the_geom.as_wkt
+    end
+
     
     if @assesment
       flash[:notice] = "analysis complete"
@@ -78,4 +78,8 @@ class AssesmentsController < ApplicationController
     redirect_to root_url
   end
     
+    
+  def show
+    @a = Assesment.find(params[:id])  
+  end
 end
