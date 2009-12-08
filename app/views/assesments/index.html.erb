@@ -21,7 +21,7 @@
 		</thead>
 	<tbody>
 	<% if @assesments.empty? %>
-			<tr><td style="height:100px;color:#444;" colspan="4"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> Upload an ESRI shapefile to start</b></span> <%= image_tag "icons/arrow_right.png" %></center></div></td><tr>
+			<tr><td style="height:100px;color:#444;" colspan="5"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> Upload an ESRI shapefile to start</b></span> <%= image_tag "icons/arrow_right.png" %></center></div></td><tr>
 	<% else %>
 		
 				<% @assesments.each do |a| %>
