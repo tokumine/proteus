@@ -2,41 +2,76 @@
 	<h2>Assessment for <%= @a.file_name%></h2>
 
 	<% @a.tenements.each_with_index do |t,i| %>
-	<h3 style="margin:0;">Tenement <%= i%></h3>
-	<h5 class="quiet" style="margin:0.2em;">Overlaps</h5>
-	<table class="zebra">
-		<thead>
-			<th>
-				PA name
-			</th>
-			<th>
-				IUCN 
-			</th>
-			<th>
-				Designation
-			</th>			
-		</thead>
-	<tbody>
-	<% if t.overlapping_pas.empty? %>
-			<tr><td style="height:100px;color:#444;" colspan="4"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> There was no overlap for this tenement</b></span></center></div></td><tr>
-	<% else %>		
-			<% t.overlapping_pas.each do |p| %>
-			<tr>
-				<td>
-					<%= p.name_eng %>
-				</td> 
-				<td>
-					<%= p.iucncat %>
-				</td>
-				<td>
-					<%= p.desig_loc%>
-				</td>
-			</tr>		
-			<% end -%>
-	<% end -%>
-		</tbody>	
-	</table>
+		<h3 style="margin:0;">Tenement <%= i%> <%= YAML.load(t.attribute_data).attributes[:name]	 %></h3>
+		<h5 class="quiet" style="margin:0.2em;">Overlaps</h5>
+		<table class="zebra">
+			<thead>
+				<th>
+					PA name
+				</th>
+				<th>
+					IUCN 
+				</th>
+				<th>
+					Designation
+				</th>			
+			</thead>
+		<tbody>
+		<% if t.overlapping_pas.empty? %>
+				<tr><td style="height:100px;color:#444;" colspan="4"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> There was no overlap for this tenement</b></span></center></div></td><tr>
+		<% else %>		
+				<% t.overlapping_pas.each do |p| %>
+				<tr>
+					<td>
+						<%= p.name_eng %>
+					</td> 
+					<td>
+						<%= p.iucncat %>
+					</td>
+					<td>
+						<%= p.desig_loc%>
+					</td>
+				</tr>		
+				<% end -%>
+		<% end -%>
+			</tbody>	
+		</table>
+		
+		<h5 class="quiet" style="margin:0.2em;">Nearby</h5>
+		<table class="zebra">
+			<thead>
+				<th>
+					PA name
+				</th>
+				<th>
+					IUCN 
+				</th>
+				<th>
+					Designation
+				</th>			
+			</thead>
+		<tbody>
+		<% if t.nearby_pas.empty? %>
+				<tr><td style="height:100px;color:#444;" colspan="4"><div><center><%= image_tag 'icons/information.png'%><span style="margin-bottom:20px;"><b> There were no nearby PAs for this tenement</b></span></center></div></td><tr>
+		<% else %>		
+				<% t.nearby_pas.each do |p| %>
+				<tr>
+					<td>
+						<%= p.name_eng %>
+					</td> 
+					<td>
+						<%= p.iucncat %>
+					</td>
+					<td>
+						<%= p.desig_loc%>
+					</td>
+				</tr>		
+				<% end -%>
+		<% end -%>
+			</tbody>	
+		</table>
 	<% end -%>	
+	<br><br>
 <% end -%>			
 
 
