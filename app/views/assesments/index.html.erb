@@ -1,5 +1,5 @@
 <div class="span-16">
-<h2>Completed Assesments</h2>
+<h2>Your Completed Assesments</h2>
 <% @assesments.each do |a| %>
 	<div><%= link_to a.file_name, a %> - <%= pluralize a.tenements.count, "tenement"%>, <%= a.created_at.to_s(:long)%></div>
 <% end -%>
