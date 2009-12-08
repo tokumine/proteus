@@ -91,7 +91,7 @@ class AssesmentsController < ApplicationController
     @a.tenements.each do |t|
       json_hash = {}
       json_hash[:id] = t.id
-      json_hash[:geom] = JSON.parse t.as_geojson(6,1)
+      json_hash[:geom] = JSON.parse t.as_geo_json(6,1)
       return_array << json_hash
     end
       
