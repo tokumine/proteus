@@ -1,11 +1,23 @@
-<h2>Assesments</h2>
+<div class="span-16">
+<h2>Completed Assesments</h2>
 <% @assesments.each do |a| %>
 	<div><%= link_to a.file_name, a %> - <%= pluralize a.tenements.count, "tenement"%>, <%= a.created_at.to_s(:long)%></div>
 <% end -%>
+</div>
 
-
-<h3>Assesment Uploader</h3>
+<div class="span-6 last box" style="padding-bottom:0.5em;">
+<h3 style="margin-bottom:0.5em;">Upload New Assessment</h3>
 <% form_for @assesment, :html => {:multipart => true} do |f| %>  
+	<div style="background:#D1DFF9;padding:1em;margin-bottom:1em;">
 	<%= f.file_field :shape, :class => 'file_input' %>
-	<%= f.submit %>
+	</div>
+	<div style="float:right;">
+	<%= f.submit "Upload" %>
+	</div>
+	
+	<div style="clear:both;"></div>
+	
+	<h6 class="quiet" style="margin-top:0em;">Privacy note</h6>
+	<p class="quiet">Please note that all data uploaded to the Tenement Analysis tool is <b>deleted nightly</b>. You can also delete your assessment manually at any time.</p>	  	
 <% end %>
+</div>

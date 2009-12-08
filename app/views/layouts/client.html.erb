@@ -1,20 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head lang="en" xml:lang="en">
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title> Proteus WDPA Statistics Tool</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-		<!-- STYLESHEETS GO HERE -->
-		<%= stylesheet_link_tag "layout" %>
-		
-		<!-- JAVASCRIPT GOES HERE -->
-		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js",
-															 "application" %>
-	</head>
-	<body>	
-		
-		<div><%= flash[:notice] %></div>
-		<%= yield %>
-	</body>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>WDPA Tenement Analysis Tool</title>
+  <%= stylesheet_link_tag 'blueprint/screen' , 'blueprint/plugins/buttons/screen',  'tipsy','facebox', 'marine' %>
+	<%= javascript_include_tag 'jquery-1.3.2.min','swfobject', 'cufon-yui', 'titillium','facebox', 'jquery.tipsy','application' %>
+</head>
+<body>
+<div class="container">
+	<h1 style="margin-bottom:0.75em;"><%= link_to image_tag("logo.png"), root_url %></h1>
+	
+	<div class="inner_container">
+		<%= yield :map%>
+		<div class="content_container">
+			<p style="color: green"><%= flash[:notice] %></p>
+			<%= yield %>			
+		</div>
+		<div style="clear:both">&nbsp;</div>
+	</div>
+	<div class="span-24">&nbsp;</div>
+	<div class="span-6 prepend-18 quiet">
+				UNEP-WCMC 2009 <%= image_tag 'wcmc_logo.png'%>
+	<div>
+</div>
+</body>
 </html>

@@ -1,4 +1,4 @@
-<h2>Assesment for <%= @a.file_name%></h2>
+<h1>Assesment for <%= @a.file_name%></h1>
 <ul>
 <% @a.tenements.each_with_index do |t,i| %>
 	<li>Tenement <%= i%> overlaps with <%= t.pas.count(:conditions => "analyses.type = 'AnalysisOverlap'") %> PAs
