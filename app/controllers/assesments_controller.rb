@@ -1,7 +1,12 @@
 class AssesmentsController < ApplicationController
   
   def index 
-    @assesments = Assesment.all :order => "created_at DESC"
+    if !session[:assesment_ids].blank?
+      @assesments = Assesment.all :conditions => ['id IN (?)', session[:assesment_ids]], :order => "created_at DESC"
+    else  
+      @assesments ||= []
+    end 
+    
     @assesment = Assesment.new
   end
   
@@ -42,6 +47,8 @@ class AssesmentsController < ApplicationController
       if f.ends_with? ".shp"
         #CREATE ASSESSMENT
         @assesment ||= Assesment.create(:file_name => file_name)
+        session[:assesment_ids] ||= []
+        session[:assesment_ids] << @assesment.id
         
         #READ IN AND CREATE TENEMENTS
         GeoRuby::Shp4r::ShpFile.open(File.join(directory,f)) do |shp|
@@ -52,11 +59,21 @@ class AssesmentsController < ApplicationController
       end
     end
     
-    #cleanup
+    #WE WOULD NORMALLY ADD TO USER HERE, BUT TEMP IS ADD TO SESSION
+    
+    
+    #cleanup files
     FileUtils.rm_rf directory
     
+    #CONDUCT DISTANCE QUERY AND SAVE
+    #Tenement.
+    
+    
+    
+    
+    
     if @assesment
-      flash[:notice] = "file saved"
+      flash[:notice] = "analysis complete"
     end
     redirect_to root_url
   end

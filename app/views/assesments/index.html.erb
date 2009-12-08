@@ -1,6 +1,6 @@
 <h2>Assesments</h2>
 <% @assesments.each do |a| %>
-	<div><%= link_to a.file_name, a %> - <%= a.created_at.to_s(:long)%></div>
+	<div><%= link_to a.file_name, a %> - <%= pluralize a.tenements.count, "tenement"%>, <%= a.created_at.to_s(:long)%></div>
 <% end -%>
 
 
