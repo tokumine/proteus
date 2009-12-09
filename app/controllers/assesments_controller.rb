@@ -95,7 +95,7 @@ class AssesmentsController < ApplicationController
             # data rows
             @a.tenements.each do |t|
               t.overlapping_pas.each do |pa|
-                csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"overlap",-1]
+                csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_eng,"overlap",-1]
               end
               t.nearby_pas.each do |pa|
                 csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"nearby",pa.analyses.find_by_tenement_id(t.id).try(:value)]
@@ -110,7 +110,7 @@ class AssesmentsController < ApplicationController
             # data rows
             @a.tenements.each do |t|
               t.overlapping_pas.each do |pa|
-                csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"overlap",-1]
+                csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_eng,"overlap",-1]
               end
               t.nearby_pas.each do |pa|
                 csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"nearby",pa.analyses.find_by_tenement_id(t.id).try(:value)]
