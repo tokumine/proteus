@@ -33,7 +33,22 @@ namespace :proteus do
       throw "ensure that WDPApol2009.shp and associated files are inside your lib/data/shp directory. you can download them here: http://wdpa.s3.amazonaws.com/WDPApol2009_1.zip"
     end
   end
-        
+     
+  desc "import all WDPA data from shapefile direct to postgis"
+  task :import_all_EC2 => :environment do
+    begin
+      sh "rm db/wdpa.sql"
+    rescue
+    end
+    
+    begin
+      sh "shp2pgsql -W LATIN1 -c -i -I -s 4326 lib/data/shp/WDPApol2009.shp public.pas > db/wdpa.sql"
+      sh "psql -h 10.245.86.6 -d proteus_tool_production -U postgres < db/wdpa.sql"
+      sh "rm db/wdpa.sql"
+    rescue
+      throw "ensure that WDPApol2009.shp and associated files are inside your lib/data/shp directory. you can download them here: http://wdpa.s3.amazonaws.com/WDPApol2009_1.zip"
+    end
+  end      
         
     
    
