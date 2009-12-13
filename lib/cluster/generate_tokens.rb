@@ -12,9 +12,17 @@ pas = Pa.find_each( :select => 'DISTINCT name_eng, gid', :batch_size => 100 ) do
 end
 sorted_tokens = tokens.sort {|a,b| b[1]<=>a[1]}
 
-puts sorted_tokens.to_yaml
+puts sorted_tokens.inspect
 
 
 #2) DECIDE HOW TO SPLIT HISTOGRAM TO REMOVE COMMON WORDS - THRESHOLD? USE SECOND DERIVATIVE?
 
-#3) 
+#3) TOKENISE NAME_ENG, REMOVE BAD_TOKENS
+
+#4) GENERATE DOUBLE METAPHONE FOR EACH TOKEN AND STORE WITH GID
+
+#5) SELECT NEARBY PA's ONLY < 50k?
+
+#6) CREATE PROXIMITY MATRIX USING TANIMOTO SIMILARITY INDEX ON METAPHONE SETS (RATIO OF INTERSECTS VS TOTAL UNION OF 2)
+
+#7) CLUSTER based on threshold. Notes
