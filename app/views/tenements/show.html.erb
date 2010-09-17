@@ -125,11 +125,20 @@
                                   <div class="completed"><p><%= number_with_precision(@percent_protected*100,:precision => 0) %>% OVERLAP</p></div>
 			          <h3>Tenement Record</h3>
 			          <ul>
-									<li><div class="<%= cycle('up','down') %>"> <strong>TENAMENT ID</strong><span><%= @t.id %></div></li>
-									<li><div class="<%= cycle('up','down') %> last"> <strong>Site Count</strong><span><%= @t.sites.count%></div></li>
+									<li><div class="<%= cycle('up','down') %>"> <strong>TENEMENT ID</strong><span><%= @t.id %></div></li>
+									<li><div class="<%= cycle('up','down') %> last"> <strong>SITE COUNT</strong><span><%= @t.sites.count%></div></li>
+									<li><div class="<%= cycle('up','down') %> last"> <strong>TENEMENT AREA</strong><span><%= number_with_delimiter(number_with_precision(@t.query_area_km2))%> <sup>km2</sup></div></li>
+									<li><div class="<%= cycle('up','down') %> last"> <strong>TENEMENT AREA CARBON</strong><span><%= number_with_delimiter(number_with_precision(@t.query_area_carbon_kg/ 1000) ) %><sup>t</sup></div></li>	
 			          </ul>
 			        </div>
+							<div class="biodiversity">
+								<h3 style="margin-bottom:5px;">Other tenements in <%= link_to "assessment", assesment_path(@a), :style => "color:#222"%> </h3>
+								
+									<% @a.tenements.each do |t| %>
+										<div style="padding:4px;"><%= link_to "Tenement #{t.id}", assesment_tenement_path(@a,t)%></div>
+									<%end	%>
 
+								</div>
 						</div>
 					</div>
 			  </div>
