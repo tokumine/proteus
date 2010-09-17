@@ -18,7 +18,7 @@ namespace :deploy do
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
     #sudo "chown postgres:postgres  #{current_path}/config/environment.rb"
-    rn "rm -f #{current_path}/config/database.yml"
+    run "rm -f #{current_path}/config/database.yml"
     run "ln -s #{shared_path}/config/database.yml #{current_path}/config/database.yml"
     run "touch #{current_path}/tmp/restart.txt"
   end  
