@@ -3,6 +3,15 @@ class Tenement < ActiveRecord::Base
   has_many :sites, :dependent => :destroy
   acts_as_geom :the_geom => :polygon  
   
+  def total_query_area_protected
+    Site.sum(:query_area_protected_km2, :conditions => "tenement_id = #{id}")
+  end
+  
+  def percentage_protected               
+    p = (total_query_area_protected / query_area_km2) 
+    p > 1 ? 1 : p
+  end
+  
   # Encoded polyline of the PA geometry optimised for static map display
   # If not cached, generate 
   # @return [String] encoded polyline 

@@ -20,6 +20,7 @@ namespace :deploy do
     #sudo "chown postgres:postgres  #{current_path}/config/environment.rb"
     run "rm -f #{current_path}/config/database.yml"
     run "ln -s #{shared_path}/database.yml #{current_path}/config/database.yml"
+    run "cd #{current_path} && RAILS_ENV=production rake asset:packager:build_all"
     run "touch #{current_path}/tmp/restart.txt"
   end  
 end
