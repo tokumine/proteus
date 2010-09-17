@@ -43,13 +43,3 @@ test:
   username: postgres
   password:
   template: template_postgis  
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  host: 10.245.86.6
-  database: proteus_tool_production
-  pool: 5
-  username: postgres
-  password: postgres
-  template: template_postgis
