@@ -1,4 +1,5 @@
 class AssesmentsController < ApplicationController
+  layout 'base_layout', :except => 'index'
   
   def index 
     if !session[:assesment_ids].blank?
@@ -65,22 +66,24 @@ class AssesmentsController < ApplicationController
     #cleanup files
     FileUtils.rm_rf directory
     
-    #CONDUCT DISTANCE QUERY AND SAVE IN JOIN TABLE
-    @assesment.tenements.each do |t|
-      AnalysisOverlap.analyse t.id, t.the_geom.as_wkt
-      AnalysisProximity.analyse t.id, t.the_geom.as_wkt
-    end
-
+    # Query API
+    @assesment.analyse
     
     if @assesment
       flash[:notice] = "analysis complete"
     end
-    redirect_to root_url
+    redirect_to assesment_path(@assesment)
   end
     
     
   def show
-    @a = Assesment.find(params[:id])
+    @a = Assesment.find(params[:id], :include => {:tenements => :sites})
+    
+    # percent protected to non protected    
+    @protected_area = Site.sum(:query_area_protected_km2, :conditions => "assesments.id = #{@a.id}", :joins => {:tenement => :assesment})
+    @total_area     = Tenement.sum(:query_area_km2, :conditions => "assesments.id = #{@a.id}", :joins => [:assesment])
+    @percent_protected = (@protected_area/@total_area) 
+    
     respond_to do |wants|
       wants.html
       wants.csv do
@@ -90,15 +93,13 @@ class AssesmentsController < ApplicationController
           require 'fastercsv'
           csv_string = FasterCSV.generate do |csv|
             # header row
-            csv << ["tenement_id", "wdpa_site_code", "pa_name", "iucn_cat", "designation", "analysis type", "distance"]
+            csv << ["tenement_id", "wdpa_site_code", "pa_name", "iucn_cat", "designation", "tenement_i_km2", "tenement_i_C" ]
 
             # data rows
             @a.tenements.each do |t|
-              t.overlapping_pas.each do |pa|
-                csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_eng,"overlap",-1]
-              end
-              t.nearby_pas.each do |pa|
-                csv << [t.id, pa.site_id, pa.name_eng,pa.iucncat,pa.desig_loc,"nearby",pa.analyses.find_by_tenement_id(t.id).try(:value)]
+              t.sites.each do |pa|
+                d = YAML.load(pa.data_standard)
+                csv << [t.id, pa.wdpaid, d["NAME"].to_s, d["IUCNCAT"].to_s,d["DESIG"].to_s, pa.query_area_protected_km2, pa.query_area_protected_carbon_kg ]
               end
             end
           end
@@ -123,7 +124,7 @@ class AssesmentsController < ApplicationController
 
         # send it to the browsah
         send_data csv_string,
-                 :type => 'text/csv; charset=iso-8859-1; header=present',
+                 :type => 'text/csv; charset=UTF-8; header=present',
                  :disposition => "attachment; filename=tenement_analysis.csv"
       end
     end
