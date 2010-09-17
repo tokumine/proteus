@@ -66,7 +66,9 @@
 
 			$.each(data,function(i,val){
 				bounds.extend(new google.maps.LatLng(val.y,val.x));
-				var infoBox = new SearchMarker({latlng: new google.maps.LatLng(val.y,val.x), map: map, paInformation: val});
+				new SearchMarker({latlng: new google.maps.LatLng(val.y,val.x), map: map, paInformation: val});
+				var poly = createGeoJsonPolygon(val.the_geom)
+				poly.setMap(map);
 			});
 	
 			map.fitBounds (bounds);
@@ -74,7 +76,29 @@
 
 		}
 
-
+		function createGeoJsonPolygon(geojson){
+			var coords = geojson.coordinates;
+			var paths = [];
+			$.each(coords,function(i,n){
+				$.each(n,function(j,o){
+					var path=[];
+					$.each(o,function(k,p){
+						var ll = new google.maps.LatLng(p[1],p[0]);
+						path.push(ll);
+					});
+					paths.push(path);
+				});
+			});
+			var polygon = new google.maps.Polygon({
+				paths: paths,
+				strokeColor: "#FF7800",
+				strokeOpacity: 1,
+				strokeWeight: 2,
+				fillColor: "#46461F",
+				fillOpacity: 0.5
+			});
+			return polygon;
+		}
 
 
 		function showBottom(){

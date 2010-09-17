@@ -90,6 +90,22 @@ class AssesmentsController < ApplicationController
     @total_area     = Tenement.sum(:query_area_km2, :conditions => "assesments.id = #{@a.id}", :joins => [:assesment])
     @percent_protected = (@protected_area/@total_area) 
     
+    
+    @map_json = @a.tenements.map {|t|        
+        {:id          => t.id,
+         :aid         => @a.id,  
+         :name        => "polygon #{t.id}",
+         :local_name  => "#{(t.percentage_protected * 100).floor.to_i}% protection",
+         :x           => t.point_on_surface.x,#.center.x,                       
+         :y           => t.point_on_surface.y,#.center.y,
+         :the_geom    => JSON.parse(Tenement.find_by_sql("SELECT ST_AsGeoJSON(Multi(ST_Simplify(the_geom, 0.0001)),6,0) as json FROM tenements WHERE id = #{t.id}").first.json),
+         :pois        => 0,
+         :image       => Gchart.pie(:data => [t.percentage_protected, 1-t.percentage_protected], 											 
+ 											 :size => "200x200", :background => "ffffff", :custom => "chco=#{pie_colors.join("|")}")}      
+    }.to_json
+    
+    Rails.logger.fatal @map_json.inspect
+    
     respond_to do |wants|
       wants.html
       wants.csv do
