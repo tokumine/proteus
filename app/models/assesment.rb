@@ -31,14 +31,17 @@ class Assesment < ActiveRecord::Base
           ds   = s['data_standard']
           wkt  = ds["GEOM"]        
           s = Site.create :tenement_id                    => t.id,
+                          :name                           => s['name'],
                           :wdpaid                         => s['wdpaid'],
                           :image                          => s['image'],
-                          :encoded_polyline_cache         => s['epl'],
                           :data_standard                  => s['data_standard'],
                           :protected_carbon_kg            => s['protected_carbon_kg'],
                           :protected_area_km2             => s['protected_area_km2'],
                           :query_area_protected_km2       => s['query_area_protected_km2'],
-                          :query_area_protected_carbon_kg => s['query_area_protected_carbon_kg']        
+                          :query_area_protected_carbon_kg => s['query_area_protected_carbon_kg'], 
+                          :encoded_polyline_cache         => s['epl']
+          sql = "UPDATE sites SET the_geom=ST_GeomFromEWKT(#{s['simple_geom']}) where id=#{s.id}"                                                          
+          Site.connection.execute sql
         end                  
       end      
     end    

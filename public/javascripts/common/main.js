@@ -228,6 +228,31 @@ function goToSearch() {
 	}
 }
 
+function createGeoJsonPolygon(geojson){
+	var coords = geojson.coordinates;
+	var paths = [];
+	$.each(coords,function(i,n){
+		$.each(n,function(j,o){
+			var path=[];
+			$.each(o,function(k,p){
+				var ll = new google.maps.LatLng(p[1],p[0]);
+				path.push(ll);
+			});
+			paths.push(path);
+		});
+	});
+	var polygon = new google.maps.Polygon({
+		paths: paths,
+		strokeColor: "#FF7800",
+		strokeOpacity: 1,
+		strokeWeight: 2,
+		fillColor: "#46461F",
+		fillOpacity: 0.5
+	});
+	return polygon;
+}
+
+
 
 /*
 Jquery and Rails powered default application.js
