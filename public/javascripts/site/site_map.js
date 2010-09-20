@@ -39,7 +39,6 @@
 			}	
 		}
 
-
 		function initialize(data) {
 		  var myOptions = {
 		      zoom: 5,
@@ -62,6 +61,11 @@
 			ppeOverlay.setMap(map);
 			google.maps.event.addListener(map,"idle",function(){ppeOverlay.idle();});
 			
+			var t_data = $('#t_map_data').text().replace('\\','');
+			var t_geom = jQuery.parseJSON(t_data);
+
+			var poly = createMainGeoJsonPolygon(t_geom)
+			poly.setMap(map);
 
 
 			$.each(data,function(i,val){
@@ -73,7 +77,7 @@
 	
 			map.fitBounds (bounds);
 		  map.setCenter( bounds.getCenter());
-
+			$('#loadingPa').hide();
 		}
 
 	
@@ -88,3 +92,4 @@
 				$('#bottom_right_container').hide();
 			}			
 		}
+		

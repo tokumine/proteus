@@ -17,9 +17,9 @@
 			$(this).clearQueue();
 		});
 
+
 		var map_data = $('#search_map_data').text().replace('\\','');
 		initialize(jQuery.parseJSON(map_data));
-
 
 		if ($.browser.msie && $.browser.version.substr(0,3)=="7.0"){
 			var zIndexNumber = 1000;  
@@ -69,6 +69,4 @@
 
 		$('#zoom_in').click(function(){map.setZoom(map.getZoom()+1);});
 		$('#zoom_out').click(function(){map.setZoom(map.getZoom()-1);});
-
 	});
-	

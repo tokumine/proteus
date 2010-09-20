@@ -252,6 +252,30 @@ function createGeoJsonPolygon(geojson){
 	return polygon;
 }
 
+function createMainGeoJsonPolygon(geojson){
+	var coords = geojson.coordinates;
+	var paths = [];
+	$.each(coords,function(i,n){
+		$.each(n,function(j,o){
+			var path=[];
+			$.each(o,function(k,p){
+				var ll = new google.maps.LatLng(p[1],p[0]);
+				path.push(ll);
+			});
+			paths.push(path);
+		});
+	});
+	var polygon = new google.maps.Polygon({
+		paths: paths,
+		strokeColor: "#7952E0",
+		strokeOpacity: 1,
+		strokeWeight: 1,
+		fillColor: "#BCA8F0",
+		fillOpacity: 0.5
+	});
+	return polygon;
+}
+
 
 
 /*

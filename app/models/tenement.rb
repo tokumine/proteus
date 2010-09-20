@@ -1,6 +1,14 @@
 class Tenement < ActiveRecord::Base
   belongs_to :assesment
   has_many :sites, :dependent => :destroy
+  has_many :map_sites, :class_name => "Site", :finder_sql =>
+            'SELECT *, x(ST_PointOnSurface(the_geom)) as lng, 
+              y(ST_PointOnSurface(the_geom)) as lat, 
+              ST_AsGeoJSON(the_geom,6,0) as geojson
+              FROM sites s
+              WHERE s.tenement_id=#{id}
+              ORDER BY s.id'
+              
   acts_as_geom :the_geom => :polygon  
   
   def image

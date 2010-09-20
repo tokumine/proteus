@@ -91,23 +91,19 @@ class AssesmentsController < ApplicationController
     @percent_protected = (@protected_area/@total_area) 
     
     
-    @map_json = @a.tenements(:select => "*, x(ST_PointOnSurface(the_geom)) as x, 
-                                            y(ST_PointOnSurface(the_geom)) as y, 
-                                            ST_AsGeoJSON(the_geom,6,0) as geojson").map {|t|        
+    @map_json = @a.map_tenements.map {|t|        
         {:id          => t.id,
          :aid         => @a.id,  
          :name        => "polygon #{t.id}",
          :local_name  => "#{(t.percentage_protected * 100).floor.to_i}% protection",
-         :x           => t.x,
-         :y           => t.y,
+         :x           => t.lng,
+         :y           => t.lat,
          :the_geom    => JSON.parse(t.geojson),
          :pois        => 0,
          :image       => Gchart.pie(:data => [t.percentage_protected, 1-t.percentage_protected], 											 
  											 :size => "150x150", :background => "ffffff", :custom => "chco=#{pie_colors.join("|")}")}      
     }.to_json
-    
-#    Rails.logger.fatal @map_json.inspect
-    
+        
     respond_to do |wants|
       wants.html
       wants.csv do

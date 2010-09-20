@@ -6,6 +6,13 @@ class Assesment < ActiveRecord::Base
             'FROM tenements t ' +
             'WHERE t.assesment_id = #{id} ' +
             'ORDER BY t.id'
+  has_many :map_tenements, :class_name => "Tenement", :finder_sql =>
+            'SELECT *, x(ST_PointOnSurface(the_geom)) as lng, 
+              y(ST_PointOnSurface(the_geom)) as lat, 
+              ST_AsGeoJSON(the_geom,6,0) as geojson
+              FROM tenements t
+              WHERE t.assesment_id=#{id}
+              ORDER BY t.id'          
   
   # call ppe web service, get results and store locally
   def analyse    
@@ -28,9 +35,8 @@ class Assesment < ActiveRecord::Base
       
       res["protected_areas"].each do |s|
         if !s["is_point"]
-          ds   = s['data_standard']
-          wkt  = ds["GEOM"]        
-          s = Site.create :tenement_id                    => t.id,
+          
+          site = Site.create :tenement_id                    => t.id,
                           :name                           => s['name'],
                           :wdpaid                         => s['wdpaid'],
                           :image                          => s['image'],
@@ -40,7 +46,7 @@ class Assesment < ActiveRecord::Base
                           :query_area_protected_km2       => s['query_area_protected_km2'],
                           :query_area_protected_carbon_kg => s['query_area_protected_carbon_kg'], 
                           :encoded_polyline_cache         => s['epl']
-          sql = "UPDATE sites SET the_geom=ST_GeomFromEWKT(#{s['simple_geom']}) where id=#{s.id}"                                                          
+          sql = "UPDATE sites SET the_geom=ST_GeomFromText('#{s['simple_geom']}') where id=#{site.id}"                                                          
           Site.connection.execute sql
         end                  
       end      

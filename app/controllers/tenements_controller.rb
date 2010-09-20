@@ -9,16 +9,14 @@ class TenementsController < ApplicationController
     @total_area     = @t.query_area_km2
     @percent_protected = (@protected_area/@total_area)     
     
-    
-    @map_json = @t.sites(:select => "*, x(ST_PointOnSurface(the_geom)) as x, 
-                                        y(ST_PointOnSurface(the_geom)) as y, 
-                                        ST_AsGeoJSON(the_geom, 6,0) as geojson").map {|s|        
+    @t_json = @t.as_geo_json
+    @map_json = @t.map_sites.map {|s|        
         {:id          => s.id,
          :wdpaid      => s.wdpaid,
          :name        => s.name,         
-         :local_name  => "#{s.percent_affected}% protection",
-         :x           => s.x,#.center.x,                       
-         :y           => s.y,#.center.y,
+         :local_name  => "#{s.percent_affected}% poly overlap",
+         :x           => s.lng,#.center.x,                       
+         :y           => s.lat,#.center.y,
          :the_geom    => JSON.parse(s.geojson),
          :pois        => 0,
          :image       => Gchart.pie(:data => [s.percent_affected, 100-s.percent_affected], 											 

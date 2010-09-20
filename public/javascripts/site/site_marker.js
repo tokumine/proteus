@@ -55,10 +55,10 @@ SearchMarker.prototype.createElement = function() {
     div = this.div_ = document.createElement("div");
     div.style.border = "0px none";
     div.style.position = "absolute";
-    div.style.background = "url('../images/icons/marker.png') no-repeat 0 0";
+    div.style.background = "url('/images/icons/marker.png') no-repeat 0 0";
     div.style.width = this.width_ + "px";
     div.style.height = this.height_ + "px";
-
+		
     var paImage = document.createElement("img");
 		paImage.style.position = "absolute";
 		paImage.style.top = '13px';
@@ -76,9 +76,10 @@ SearchMarker.prototype.createElement = function() {
 		hiddenDiv.style.left = '-5px';
     hiddenDiv.style.width = "208px";
     hiddenDiv.style.height = "88px";
-		hiddenDiv.style.background = 'url(../images/markers/backgroundMarker.png) no-repeat 0 0';
+		hiddenDiv.style.background = 'url(/images/markers/backgroundMarker.png) no-repeat 0 0';
     hiddenDiv.style.cursor = "pointer";
 		hiddenDiv.alt = this.paInformation_.name;
+
 
 		var paImageOver = document.createElement("img");
 		paImageOver.style.position = "absolute";
@@ -111,7 +112,7 @@ SearchMarker.prototype.createElement = function() {
 		hiddenDiv.appendChild(paName);
 				
 		$(hiddenDiv).click( function(ev){
-		    window.location = '/assesments/'+ me.paInformation_.aid + '/tenements/' + me.paInformation_.id
+		    window.location = 'http://stage-www.tinypla.net/sites/'+ me.paInformation_.wdpaid
 				ev.stopPropagation();
 				ev.preventDefault();
 		});
